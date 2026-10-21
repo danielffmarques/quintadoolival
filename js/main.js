@@ -510,9 +510,14 @@ function initActivitiesTabs() {
       if (townCard) townCard.style.display = 'none';
     }
 
+    const isMobile = window.innerWidth <= 768;
+
     // Obter cartões da página atual
     let pageCards = [];
-    if (hasTown) {
+    if (isMobile) {
+      // No mobile, exibe todas as atividades filtradas em carrossel horizontal de swipe nativo sem botões
+      pageCards = filtered;
+    } else if (hasTown) {
       if (currentPage === 1) {
         // Linha 2 na primeira página com vila: 2 cartões de atividades
         pageCards = filtered.slice(0, 2);
@@ -547,7 +552,7 @@ function initActivitiesTabs() {
     // Indicadores de Bolinhas no Meio (UX/UI Reforçado sem Texto)
     if (dotsContainer) {
       dotsContainer.innerHTML = '';
-      if (totalPages > 1) {
+      if (totalPages > 1 && !isMobile) {
         for (let i = 1; i <= totalPages; i++) {
           const dot = document.createElement('button');
           dot.type = 'button';
@@ -562,9 +567,9 @@ function initActivitiesTabs() {
       }
     }
 
-    // Ocultar barra se só houver 1 página
+    // Ocultar barra se só houver 1 página ou se for ecrã móvel (onde se usa swipe lateral)
     if (controls) {
-      controls.style.display = (totalPages <= 1) ? 'none' : 'flex';
+      controls.style.display = (isMobile || totalPages <= 1) ? 'none' : 'flex';
     }
   }
 
