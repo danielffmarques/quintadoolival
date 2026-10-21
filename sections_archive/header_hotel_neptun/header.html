@@ -1,0 +1,62 @@
+<!--
+  Arquivo de Secção: Header Estilo Hotel Neptun (Warnemünde)
+  Origem: Inspirado em https://www.hotel-neptun.de/en/relax/
+  Data de Arquivo: 2026-10-20
+  Características:
+    - 3-Zonas: [RESERVAR AGORA] à esquerda em caixa retangular fina com reflexo angular
+    - Emblema circular ao centro (Quinta do Olival) com traço vetorial de 1.4px
+    - Navegação à direita em maiúsculas com tracking amplo (0.2em) e seletor PT / EN
+    - Máscara superior de gradiente/blur translúcido e estado scrolled com elevação sólida
+-->
+<header class="header header-neptun" id="mainHeader">
+  <div class="neptun-header-inner">
+    <!-- Esquerda: Botão BOOK NOW Retangular Delicado -->
+    <div class="neptun-header-left">
+      <a href="reservas.html" class="neptun-book-btn" aria-label="Reservar Estadia">
+        <span>Reservar Agora</span>
+      </a>
+    </div>
+
+    <!-- Centro: Emblema Circular da Quinta do Olival -->
+    <div class="neptun-header-center">
+      <a href="index.html" class="neptun-emblem-link" aria-label="Quinta do Olival — Página Inicial">
+        <svg class="neptun-emblem-svg" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="26" cy="26" r="24.5" stroke="currentColor" stroke-width="1.3" stroke-opacity="0.9" />
+          <g transform="translate(11, 10)" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 15 29 C 15 22, 13 16, 10 11" fill="none" />
+            <path d="M 10 11 C 5 6, 1 12, 5 18 C 9 20, 10 15, 10 11 Z" fill="currentColor" fill-opacity="0.18" />
+            <path d="M 5 18 C 8 15, 10 12, 10 11" fill="none" stroke-width="1" />
+            <path d="M 10 11 C 14 5, 21 9, 19 16 C 16 21, 12 16, 10 11 Z" fill="currentColor" fill-opacity="0.18" />
+            <path d="M 19 16 C 15 14, 12 12, 10 11" fill="none" stroke-width="1" />
+            <circle cx="6.5" cy="21.5" r="2.2" fill="currentColor" />
+            <circle cx="18" cy="19.5" r="2.2" fill="currentColor" />
+          </g>
+        </svg>
+        <span class="neptun-emblem-caption">Quinta do Olival</span>
+      </a>
+    </div>
+
+    <!-- Direita: Navegação em Maiúsculas Espaçadas + Seletor de Idioma -->
+    <div class="neptun-header-right">
+      <button class="mobile-menu-btn" aria-label="Abrir Menu" aria-expanded="false">
+        <svg class="icon-svg-lg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+      </button>
+
+      <nav class="neptun-nav" aria-label="Navegação Principal">
+        <ul class="nav-menu">
+          <li><a href="#experiencia" class="nav-link">A Quinta</a></li>
+          <li><a href="#espaco-casas" class="nav-link">Casas</a></li>
+          <li><a href="#arredores" class="nav-link">Arredores</a></li>
+          <li><a href="#opinioes" class="nav-link">Opiniões</a></li>
+          <li><a href="#faq-duvidas" class="nav-link">FAQs</a></li>
+        </ul>
+      </nav>
+
+      <div class="neptun-lang-switch">
+        <span class="lang-option active">PT</span>
+        <span class="lang-slash">/</span>
+        <a href="#" class="lang-option" title="English Version">EN</a>
+      </div>
+    </div>
+  </div>
+</header>

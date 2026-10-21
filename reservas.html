@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservas - Quinta do Olival | Turismo Rural em Arcos de Valdevez</title>
+  <meta name="description" content="Reserve a sua casa de campo na Quinta do Olival em Arcos de Valdevez. Disponibilidade imediata, acolhimento familiar e pagamento seguro online.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/icons/favicon_1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="booking-page-body">
+
+  <!-- =========================================================================
+       HEADER DA PÁGINA DE RESERVAS (Limpo, Elegante e Proporcional)
+       ========================================================================= -->
+  <header class="header booking-header">
+    <div class="container nav-container">
+      <a href="index.html" class="booking-logo-wrap" aria-label="Quinta do Olival — Página Inicial">
+        <img src="assets/logos/logo_bold.png" alt="Quinta do Olival" class="booking-logo-img">
+        <div class="booking-brand-meta">
+          <span class="booking-brand-location">Távora, Arcos de Valdevez</span>
+        </div>
+      </a>
+      <div class="booking-header-actions" style="display: flex; align-items: center; gap: 1.25rem;">
+        <a href="index.html" class="btn btn-outline-dark" style="font-size: 0.84rem; padding: 0.45rem 0.95rem;">
+          &larr; Voltar ao Website
+        </a>
+        <a href="tel:+351925121364" class="nav-contact-link" style="color: var(--dark-neutral); font-weight: 600; font-size: 0.88rem; text-decoration: none; display: flex; align-items: center; gap: 0.4rem;">
+          <svg class="icon-svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <span>+351 925 121 364</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       CONTEÚDO PRINCIPAL DE RESERVAS (Passo a Passo Sequencial / Wizard)
+       ========================================================================= -->
+  <main class="section" style="padding-top: 2rem; padding-bottom: 4rem;">
+    <div class="container">
+      
+      <div style="margin-bottom: 2rem;">
+        <h2 style="margin: 0 0 0.4rem 0;">Reservar Estadia — Quinta do Olival</h2>
+        <p style="margin: 0; color: var(--text-secondary); font-size: 0.95rem;">
+          Reserve diretamente connosco com a melhor tarifa garantida, fruta fresca do pomar livre e cancelamento flexível.
+        </p>
+      </div>
+
+      <div class="booking-page-layout">
+        <!-- Coluna Esquerda: Passos Sequenciais de Reserva -->
+        <div class="booking-steps-col">
+          <form id="dedicatedBookingForm">
+
+            <!-- ==============================================================
+                 PASSO 1: Datas da Estadia e Número de Hóspedes (Ativo Inicialmente)
+                 ============================================================== -->
+            <div class="booking-step-block active" id="stepBlock1">
+              <div class="booking-step-title">
+                <span class="booking-step-num">1</span>
+                <span>Datas da Estadia e Hóspedes</span>
+              </div>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+                Escolha o intervalo de datas pretendido para verificar a disponibilidade nas nossas casas:
+              </p>
+
+              <div class="booking-dates-guests-grid">
+                <div class="form-group">
+                  <label for="bookCheckin" style="font-weight: 600; font-size: 0.88rem; margin-bottom: 0.35rem;">Data de Check-in</label>
+                  <div class="date-input-container">
+                    <input type="text" id="bookCheckin" name="checkin" class="form-control" placeholder="DD/MM/AAAA" autocomplete="off" required>
+                    <button type="button" class="date-calendar-btn" aria-label="Escolher data de check-in">
+                      <svg class="icon-svg" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="bookCheckout" style="font-weight: 600; font-size: 0.88rem; margin-bottom: 0.35rem;">Data de Check-out</label>
+                  <div class="date-input-container">
+                    <input type="text" id="bookCheckout" name="checkout" class="form-control" placeholder="DD/MM/AAAA" autocomplete="off" required>
+                    <button type="button" class="date-calendar-btn" aria-label="Escolher data de check-out">
+                      <svg class="icon-svg" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="bookGuests" style="font-weight: 600; font-size: 0.88rem; margin-bottom: 0.35rem;">Número de Hóspedes</label>
+                  <div class="custom-select-box">
+                    <select id="bookGuests" name="guests" class="form-control guest-select-input">
+                      <option value="1">1 Hóspede</option>
+                      <option value="2" selected>2 Hóspedes</option>
+                      <option value="3">3 Hóspedes</option>
+                      <option value="4">4 Hóspedes</option>
+                      <option value="5">5 Hóspedes</option>
+                      <option value="6">6 Hóspedes</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step-actions-bar" style="margin-top: 1.25rem;">
+                <button type="button" class="btn btn-primary step-btn-next" id="btnNextToStep2">
+                  Continuar para Escolha da Casa &rarr;
+                </button>
+              </div>
+            </div>
+
+            <!-- ==============================================================
+                 PASSO 2: Escolha da Casa e Cesta de Pequeno-Almoço (Revela após Passo 1)
+                 ============================================================== -->
+            <div class="booking-step-block step-locked" id="stepBlock2">
+              <div class="booking-step-title">
+                <span class="booking-step-num">2</span>
+                <span>Escolha da Casa e Pequeno-Almoço</span>
+                <button type="button" class="step-edit-link" id="btnEditStep1" style="margin-left: auto; background: none; border: none; color: var(--primary-accent); font-size: 0.82rem; cursor: pointer; text-decoration: underline;">Alterar Datas</button>
+              </div>
+
+              <!-- Notificação Acolhedora de Hospitalidade (Sem tarifa não reembolsável) -->
+              <div class="hospitality-guarantee-box" style="background: rgba(63, 86, 57, 0.08); border: 1px solid rgba(63, 86, 57, 0.25); border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.65rem; font-size: 0.85rem; color: #274026;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3F5639" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>Cancelamento flexível incluído.</span>
+              </div>
+
+              <!-- Seletor de Casa da Quinta -->
+              <div style="margin-bottom: 1.5rem;">
+                <label style="font-weight: 700; font-size: 0.9rem; color: var(--dark-neutral); display: block; margin-bottom: 0.6rem;">
+                  Selecione a sua Habitação na Quinta:
+                </label>
+                <div class="booking-units-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 0.85rem;">
+                  <!-- Opção 1: Casa do Lagar -->
+                  <label class="booking-unit-option selected" data-unit="lagar" style="border: 2px solid var(--primary-accent); background: var(--bg-white); border-radius: var(--border-radius-md); padding: 0.85rem; cursor: pointer; display: block; position: relative;">
+                    <input type="radio" name="selectedHouse" value="lagar" checked style="position: absolute; top: 0.85rem; right: 0.85rem; accent-color: var(--primary-accent);">
+                    <div style="font-weight: 700; font-size: 0.92rem; color: var(--dark-neutral); margin-bottom: 0.15rem;">Casa do Lagar (T2)</div>
+                    <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.4rem;">Até 4 pessoas &bull; 2 Quartos &bull; Piscina</div>
+                    <div style="font-size: 0.85rem; font-weight: 700; color: var(--primary-accent);">Sob Consulta</div>
+                  </label>
+
+                  <!-- Opção 2: Casa dos Avós -->
+                  <label class="booking-unit-option" data-unit="avos" style="border: 1px solid var(--border-color); background: var(--bg-white); border-radius: var(--border-radius-md); padding: 0.85rem; cursor: pointer; display: block; position: relative;">
+                    <input type="radio" name="selectedHouse" value="avos" style="position: absolute; top: 0.85rem; right: 0.85rem; accent-color: var(--primary-accent);">
+                    <div style="font-weight: 700; font-size: 0.92rem; color: var(--dark-neutral); margin-bottom: 0.15rem;">Casa dos Avós (T3)</div>
+                    <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.4rem;">Até 6 pessoas &bull; 3 Quartos &bull; Piscina</div>
+                    <div style="font-size: 0.85rem; font-weight: 700; color: var(--primary-accent);">Sob Consulta</div>
+                  </label>
+
+                  <!-- Opção 3: Adega do Buraco -->
+                  <label class="booking-unit-option" data-unit="adega" style="border: 1px solid var(--border-color); background: var(--bg-white); border-radius: var(--border-radius-md); padding: 0.85rem; cursor: pointer; display: block; position: relative;">
+                    <input type="radio" name="selectedHouse" value="adega" style="position: absolute; top: 0.85rem; right: 0.85rem; accent-color: var(--primary-accent);">
+                    <div style="font-weight: 700; font-size: 0.92rem; color: var(--dark-neutral); margin-bottom: 0.15rem;">Adega do Buraco (T1)</div>
+                    <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.4rem;">Até 2 pessoas &bull; Romântico &bull; Piscina</div>
+                    <div style="font-size: 0.85rem; font-weight: 700; color: var(--primary-accent);">Sob Consulta</div>
+                  </label>
+
+                  <!-- Opção 4: Lavoeira I (Sauna) -->
+                  <label class="booking-unit-option" data-unit="lavoeira1" style="border: 1px solid var(--border-color); background: var(--bg-white); border-radius: var(--border-radius-md); padding: 0.85rem; cursor: pointer; display: block; position: relative;">
+                    <input type="radio" name="selectedHouse" value="lavoeira1" style="position: absolute; top: 0.85rem; right: 0.85rem; accent-color: var(--primary-accent);">
+                    <div style="font-weight: 700; font-size: 0.92rem; color: var(--dark-neutral); margin-bottom: 0.15rem;">Lavoeira I — Sauna (T1)</div>
+                    <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.4rem;">Até 2 pessoas &bull; Sauna &bull; Piscina Privada</div>
+                    <div style="font-size: 0.85rem; font-weight: 700; color: var(--primary-accent);">Sob Consulta</div>
+                  </label>
+
+                  <!-- Opção 5: Lavoeira II (Hidromassagem) -->
+                  <label class="booking-unit-option" data-unit="lavoeira2" style="border: 1px solid var(--border-color); background: var(--bg-white); border-radius: var(--border-radius-md); padding: 0.85rem; cursor: pointer; display: block; position: relative;">
+                    <input type="radio" name="selectedHouse" value="lavoeira2" style="position: absolute; top: 0.85rem; right: 0.85rem; accent-color: var(--primary-accent);">
+                    <div style="font-weight: 700; font-size: 0.92rem; color: var(--dark-neutral); margin-bottom: 0.15rem;">Lavoeira II — Hidromassagem (T1)</div>
+                    <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.4rem;">Até 2 pessoas &bull; Banheira no quarto</div>
+                    <div style="font-size: 0.85rem; font-weight: 700; color: var(--primary-accent);">Sob Consulta</div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Escolha da Cesta de Pequeno-Almoço -->
+              <div>
+                <label style="font-weight: 700; font-size: 0.9rem; color: var(--dark-neutral); display: block; margin-bottom: 0.6rem;">
+                  Opção de Pequeno-Almoço / Cesta Matinal:
+                </label>
+                <div class="breakfast-options-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                  <!-- Apenas Alojamento -->
+                  <label class="breakfast-card selected" data-breakfast="standard" style="border: 2px solid var(--primary-accent); background: var(--bg-white); border-radius: var(--border-radius-md); padding: 1rem; cursor: pointer; display: block; position: relative;">
+                    <input type="radio" name="breakfastOption" value="standard" checked style="position: absolute; top: 0.85rem; right: 0.85rem; accent-color: var(--primary-accent);">
+                    <div style="font-weight: 700; font-size: 0.92rem; color: var(--dark-neutral); margin-bottom: 0.25rem;">Apenas Alojamento</div>
+                    <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0 0 0.5rem 0; line-height: 1.4;">
+                      Café de cortesia na casinha, pomar livre de laranjas/mirtilos e cozinha equipada.
+                    </p>
+                    <div style="font-size: 0.82rem; font-weight: 700; color: #27ae60;">Incluído sem custo adicional</div>
+                  </label>
+
+                  <!-- Com Cesta de Pequeno-Almoço Regional -->
+                  <label class="breakfast-card" data-breakfast="extra" style="border: 1px solid var(--border-color); background: var(--bg-white); border-radius: var(--border-radius-md); padding: 1rem; cursor: pointer; display: block; position: relative;">
+                    <input type="radio" name="breakfastOption" value="extra" style="position: absolute; top: 0.85rem; right: 0.85rem; accent-color: var(--primary-accent);">
+                    <div style="font-weight: 700; font-size: 0.92rem; color: var(--dark-neutral); margin-bottom: 0.25rem;">Cesta Matinal Regional</div>
+                    <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0 0 0.5rem 0; line-height: 1.4;">
+                      Pão fresco entregue de manhã, compotas caseiras, queijo do Minho e sumos naturais.
+                    </p>
+                    <div style="font-size: 0.82rem; font-weight: 700; color: var(--primary-accent);">Opção Conforto (Sob Consulta)</div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="step-actions-bar" style="margin-top: 1.25rem;">
+                <button type="button" class="btn btn-primary step-btn-next" id="btnNextToStep3">
+                  Continuar para Dados Pessoais &rarr;
+                </button>
+              </div>
+            </div>
+
+            <!-- ==============================================================
+                 PASSO 3: Dados Pessoais e Faturação (Revela após Passo 2)
+                 ============================================================== -->
+            <div class="booking-step-block step-locked" id="stepBlock3">
+              <div class="booking-step-title">
+                <span class="booking-step-num">3</span>
+                <span>Dados do Titular e Faturação</span>
+                <button type="button" class="step-edit-link" id="btnEditStep2" style="margin-left: auto; background: none; border: none; color: var(--primary-accent); font-size: 0.82rem; cursor: pointer; text-decoration: underline;">Alterar Casa</button>
+              </div>
+              
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                <div class="form-group" style="grid-column: span 2;">
+                  <label for="bookName" style="font-weight: 600; font-size: 0.88rem; margin-bottom: 0.35rem;">Nome Completo do Titular *</label>
+                  <input type="text" id="bookName" name="name" class="form-control" placeholder="ex: Maria Antónia Sousa" required>
+                </div>
+                <div class="form-group">
+                  <label for="bookEmail" style="font-weight: 600; font-size: 0.88rem; margin-bottom: 0.35rem;">E-mail para Confirmação *</label>
+                  <input type="email" id="bookEmail" name="email" class="form-control" placeholder="ex: maria@exemplo.pt" required>
+                </div>
+                <div class="form-group">
+                  <label for="bookPhone" style="font-weight: 600; font-size: 0.88rem; margin-bottom: 0.35rem;">Telemóvel / WhatsApp *</label>
+                  <input type="tel" id="bookPhone" name="phone" class="form-control" placeholder="ex: 912 345 678" required>
+                </div>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 1.25rem;">
+                <label for="bookNotes" style="font-weight: 600; font-size: 0.88rem; margin-bottom: 0.35rem;">Pedidos Especiais / Hora Prevista de Chegada</label>
+                <textarea id="bookNotes" name="notes" class="form-control" rows="2" placeholder="Indique se necessita de berço ou qualquer pedido para a sua estadia..."></textarea>
+              </div>
+
+              <!-- BLOCO DE FATURAÇÃO COM NIF OPCIONAL (PADRÃO BRUTO) -->
+              <div class="billing-container" style="background: var(--bg-light); border: 1px solid var(--border-color); border-radius: var(--border-radius-md); padding: 1rem; margin-bottom: 0.5rem;">
+                <label class="billing-toggle-label" style="display: flex; align-items: center; gap: 0.65rem; font-weight: 600; font-size: 0.9rem; cursor: pointer; margin: 0;">
+                  <input type="checkbox" id="invoiceToggle" name="needInvoice" style="width: 17px; height: 17px; accent-color: var(--primary-accent);">
+                  <span>Desejo fatura com número de contribuinte (NIF)</span>
+                </label>
+
+                <!-- Campos Expansíveis de Faturação -->
+                <div id="invoiceFieldsGroup" style="display: none; margin-top: 1rem; border-top: 1px dashed var(--border-color); padding-top: 1rem;">
+                  <div class="billing-grid-2">
+                    <div class="form-group">
+                      <label for="invoiceNif" style="font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem;">NIF / NIPC *</label>
+                      <input type="text" id="invoiceNif" name="invoiceNif" class="form-control" placeholder="ex: 123456789" maxlength="15">
+                    </div>
+                    <div class="form-group">
+                      <label for="invoiceName" style="font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem;">Nome Fiscal ou Empresa *</label>
+                      <input type="text" id="invoiceName" name="invoiceName" class="form-control" placeholder="Nome para a fatura">
+                    </div>
+                  </div>
+
+                  <div class="form-group" style="margin-top: 0.85rem;">
+                    <label for="invoiceAddress" style="font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem;">Morada de Faturação *</label>
+                    <input type="text" id="invoiceAddress" name="invoiceAddress" class="form-control" placeholder="Rua, número, andar...">
+                  </div>
+
+                  <div class="billing-grid-3" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.85rem; margin-top: 0.85rem;">
+                    <div class="form-group">
+                      <label for="invoicePostal" style="font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem;">Código Postal *</label>
+                      <input type="text" id="invoicePostal" name="invoicePostal" class="form-control" placeholder="0000-000">
+                    </div>
+                    <div class="form-group">
+                      <label for="invoiceCity" style="font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem;">Localidade / Cidade *</label>
+                      <input type="text" id="invoiceCity" name="invoiceCity" class="form-control" placeholder="Localidade">
+                    </div>
+                    <div class="form-group">
+                      <label for="invoiceCountry" style="font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem;">País</label>
+                      <select id="invoiceCountry" name="invoiceCountry" class="form-control" style="font-size: 0.85rem;">
+                        <option value="PT" selected>Portugal</option>
+                        <option value="ES">Espanha</option>
+                        <option value="FR">França</option>
+                        <option value="UK">Reino Unido</option>
+                        <option value="OTHER">Outro País</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step-actions-bar" style="margin-top: 1.25rem;">
+                <button type="button" class="btn btn-primary step-btn-next" id="btnNextToStep4">
+                  Continuar para Pagamento Seguro &rarr;
+                </button>
+              </div>
+            </div>
+
+            <!-- ==============================================================
+                 PASSO 4: Pagamento Seguro no Momento (Revela após Passo 3)
+                 ============================================================== -->
+            <div class="booking-step-block step-locked" id="stepBlock4">
+              <div class="booking-step-title">
+                <span class="booking-step-num">4</span>
+                <span>Pagamento Seguro no Momento</span>
+                <button type="button" class="step-edit-link" id="btnEditStep3" style="margin-left: auto; background: none; border: none; color: var(--primary-accent); font-size: 0.82rem; cursor: pointer; text-decoration: underline;">Alterar Titular</button>
+              </div>
+              
+              <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+                A sua reserva é garantida de imediato com cancelamento flexível. Escolha o método de pagamento seguro:
+              </p>
+
+              <!-- Métodos de Pagamento Interativos -->
+              <div class="payment-methods-tabs" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem; margin-bottom: 1.25rem;">
+                <button type="button" class="payment-tab-btn active" data-method="card" style="border: 2px solid var(--primary-accent); background: var(--bg-white); border-radius: var(--border-radius-md); padding: 0.85rem 0.5rem; text-align: center; cursor: pointer;">
+                  <div style="font-weight: 700; font-size: 0.88rem; color: var(--dark-neutral);">Cartão Bancário</div>
+                  <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.15rem;">Visa &bull; Mastercard &bull; Amex</div>
+                </button>
+                <button type="button" class="payment-tab-btn" data-method="mbway" style="border: 1px solid var(--border-color); background: var(--bg-white); border-radius: var(--border-radius-md); padding: 0.85rem 0.5rem; text-align: center; cursor: pointer;">
+                  <div style="font-weight: 700; font-size: 0.88rem; color: var(--dark-neutral);">MB WAY</div>
+                  <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.15rem;">Notificação Imediata</div>
+                </button>
+                <button type="button" class="payment-tab-btn" data-method="multibanco" style="border: 1px solid var(--border-color); background: var(--bg-white); border-radius: var(--border-radius-md); padding: 0.85rem 0.5rem; text-align: center; cursor: pointer;">
+                  <div style="font-weight: 700; font-size: 0.88rem; color: var(--dark-neutral);">Multibanco</div>
+                  <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.15rem;">Entidade &bull; Referência</div>
+                </button>
+              </div>
+
+              <!-- Campos Específicos por Método -->
+              <div id="paymentFieldsCard" class="payment-fields-box" style="margin-bottom: 1.25rem;">
+                <div class="form-group" style="margin-bottom: 0.75rem;">
+                  <label for="cardNumber" style="font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem;">Número do Cartão</label>
+                  <input type="text" id="cardNumber" class="form-control" placeholder="4000 1234 5678 9010" maxlength="19">
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem;">
+                  <div class="form-group">
+                    <label for="cardExpiry" style="font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem;">Validade (MM/AA)</label>
+                    <input type="text" id="cardExpiry" class="form-control" placeholder="12/28" maxlength="5">
+                  </div>
+                  <div class="form-group">
+                    <label for="cardCvc" style="font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem;">Código CVC</label>
+                    <input type="text" id="cardCvc" class="form-control" placeholder="123" maxlength="4">
+                  </div>
+                </div>
+              </div>
+
+              <div id="paymentFieldsMbway" class="payment-fields-box" style="display: none; margin-bottom: 1.25rem;">
+                <div class="form-group">
+                  <label for="mbwayPhone" style="font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem;">Telemóvel associado ao MB WAY</label>
+                  <input type="tel" id="mbwayPhone" class="form-control" placeholder="ex: 912 345 678" maxlength="15">
+                </div>
+              </div>
+
+              <div id="paymentFieldsMultibanco" class="payment-fields-box" style="display: none; margin-bottom: 1.25rem;">
+                <div style="background-color: var(--bg-light); border: 1px dashed var(--border-color); border-radius: var(--border-radius-sm); padding: 0.85rem; font-size: 0.85rem; line-height: 1.6;">
+                  <div><strong>Entidade:</strong> 21245</div>
+                  <div><strong>Referência:</strong> 540 918 372</div>
+                  <div><strong>Prazo:</strong> 24 horas para garantia da casa</div>
+                </div>
+              </div>
+
+              <div class="payment-security-badge" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: #27ae60; margin-bottom: 1.25rem;">
+                <svg class="icon-svg" style="width: 16px; height: 16px; fill: #27ae60;" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                <span>Pagamento encriptado e certificado &bull; Confirmação instantânea</span>
+              </div>
+
+              <!-- Botão de Submissão Final -->
+              <button type="submit" class="btn btn-primary" id="btnSubmitBooking" style="width: 100%; padding: 0.95rem; font-size: 1rem; font-weight: 700;">
+                Confirmar Reserva e Pagamento Seguro
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- ==============================================================
+             COLUNA DIREITA: Quadro de Resumo Sticky Centrado e Totalmente Visível
+             ============================================================== -->
+        <aside class="booking-summary-col">
+          <div class="booking-summary-sticky" id="bookingSummarySticky">
+            <h3 style="margin: 0 0 0.85rem 0; font-size: 1.15rem; color: var(--dark-neutral); padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color);">
+              Resumo da Estadia
+            </h3>
+            
+            <div style="margin-bottom: 0.85rem; border-radius: var(--border-radius-sm); overflow: hidden; height: 100px;">
+              <img id="summaryUnitThumb" src="assets/images/casa_lagar_main.jpg" alt="Casa do Lagar" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+
+            <div class="summary-detail-row">
+              <span class="summary-detail-label">Alojamento:</span>
+              <span class="summary-detail-val" id="summaryUnitName">Casa do Lagar (T2)</span>
+            </div>
+            <div class="summary-detail-row">
+              <span class="summary-detail-label">Entrada:</span>
+              <span class="summary-detail-val" id="summaryCheckin">A definir</span>
+            </div>
+            <div class="summary-detail-row">
+              <span class="summary-detail-label">Saída:</span>
+              <span class="summary-detail-val" id="summaryCheckout">A definir</span>
+            </div>
+            <div class="summary-detail-row">
+              <span class="summary-detail-label">Duração:</span>
+              <span class="summary-detail-val" id="summaryNights">- noites</span>
+            </div>
+            <div class="summary-detail-row">
+              <span class="summary-detail-label">Hóspedes:</span>
+              <span class="summary-detail-val" id="summaryGuests">2 Hóspedes</span>
+            </div>
+            <div class="summary-detail-row">
+              <span class="summary-detail-label">Pequeno-Almoço:</span>
+              <span class="summary-detail-val" id="summaryBreakfast">Apenas Alojamento</span>
+            </div>
+
+            <hr style="border: 0; border-top: 1px dashed var(--border-color); margin: 0.75rem 0;">
+
+            <div class="summary-price-breakdown">
+              <div class="summary-price-row total" style="display: flex; justify-content: space-between; align-items: baseline; font-weight: 700;">
+                <span style="font-size: 0.95rem;">Valor da Estadia:</span>
+                <span class="total-val" id="summaryTotalPrice" style="color: var(--primary-accent); font-size: 1.05rem;">Sob Consulta</span>
+              </div>
+            </div>
+
+            <div class="summary-guarantee-note" style="margin-top: 0.75rem; font-size: 0.78rem; color: #27ae60; display: flex; align-items: center; gap: 0.4rem;">
+              <svg class="icon-svg" style="fill: #27ae60; width: 14px; height: 14px;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Reserva direta sem intermediários &bull; D. Olga</span>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER - CONTACTOS, LOCALIZAÇÃO COM MAPA E LEGAL (Standard Casa Grande)
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Coluna 1: Marca & Contactos -->
+        <div class="footer-col">
+          <div class="footer-brand-title">Quinta do Olival</div>
+          <p class="footer-brand-desc">
+            Turismo rural acolhedor no coração do Alto Minho. Cinco casas tradicionais em granito, duas piscinas exteriores e o acolhimento caloroso da família Sousa em Arcos de Valdevez.
+          </p>
+          <ul class="footer-contacts-list">
+            <li class="footer-contact-row">
+              <span class="footer-contact-label">Telemóvel:</span>
+              <a href="tel:+351925121364" class="footer-contact-val">(+351) 925 121 364</a>
+            </li>
+            <li class="footer-contact-row">
+              <span class="footer-contact-label">E-mail:</span>
+              <a href="mailto:geral@quintadoolival.pt" class="footer-contact-val">geral@quintadoolival.pt</a>
+            </li>
+          </ul>
+
+          <div class="footer-social-icons" aria-label="Redes Sociais Oficiais">
+            <a href="https://www.instagram.com/quinta_do_olival/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram da Quinta do Olival" title="Instagram @quinta_do_olival">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/quintadoolival" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook da Quinta do Olival" title="Facebook Quinta do Olival">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Coluna 2: Secções do Website na Vertical -->
+        <div class="footer-col">
+          <h4>Secções do Website</h4>
+          <ul class="footer-vertical-nav">
+            <li><a href="index.html#experiencia" class="footer-nav-link">A Quinta</a></li>
+            <li><a href="index.html#espaco-casas" class="footer-nav-link">As Casas</a></li>
+            <li><a href="index.html#arredores" class="footer-nav-link">Arredores</a></li>
+            <li><a href="index.html#opinioes" class="footer-nav-link">Opiniões</a></li>
+            <li><a href="index.html#faq-duvidas" class="footer-nav-link">FAQs</a></li>
+            <li><a href="reservas.html" class="footer-nav-link footer-nav-highlight">Reservar Estadia</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Localização & Mapa Embed -->
+        <div class="footer-col">
+          <h4>Localização &amp; Acessos</h4>
+          <p class="footer-location-text">
+            Quinta do Olival, Távora Santa Maria<br>
+            4970-524 Arcos de Valdevez, Alto Minho, Portugal
+          </p>
+          <p class="footer-distances-line">
+            Distâncias: Arcos de Valdevez (7 km) &bull; Ponte de Lima (14 km) &bull; Peneda-Gerês (20 km) &bull; Porto (90 km)
+          </p>
+
+          <div class="footer-map-under">
+            <iframe
+              title="Localização da Quinta do Olival em Arcos de Valdevez"
+              src="https://maps.google.com/maps?q=41.8385,-8.4552&z=14&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <a href="https://maps.google.com/maps?q=41.8385,-8.4552" target="_blank" rel="noopener noreferrer" class="footer-map-cta" aria-label="Abrir localização no Google Maps">
+              <span>Abrir no Google Maps</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Quinta do Olival — Arcos de Valdevez. RNT: 3780/AL. Todos os direitos reservados.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#" class="legal-modal-trigger" data-legal="privacy">Política de Privacidade</a>
+          <span class="sep">&bull;</span>
+          <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener noreferrer">Livro de Reclamações</a>
+        </div>
+        <div>
+          Desenvolvido segundo o Standard de Qualidade Bruto
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal de Confirmação de Reserva -->
+  <div id="bookingConfirmModal" class="modal-backdrop" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 0.65rem;">
+          <div style="background: rgba(39, 174, 96, 0.15); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+            <svg class="icon-svg" style="fill: #27ae60; width: 20px; height: 20px;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          </div>
+          <div>
+            <h3 style="margin: 0; font-size: 1.25rem; color: var(--dark-neutral);">Reserva Confirmada com Sucesso</h3>
+            <span style="font-size: 0.8rem; color: #27ae60; font-weight: 600;">Estado: Confirmado e Aprovado</span>
+          </div>
+        </div>
+        <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Fechar">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+          Muito obrigado pela sua reserva na <strong>Quinta do Olival</strong>. Enviámos o comprovativo detalhado da estadia para o seu email.
+        </p>
+
+        <div style="background: var(--bg-light); border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); padding: 1.15rem; font-size: 0.88rem; line-height: 1.6; margin-bottom: 1.25rem;">
+          <div><strong>Código de Reserva:</strong> <span id="modalRefCode">QO-2026-8941</span></div>
+          <div><strong>Alojamento:</strong> <span id="modalHouseName">Casa do Lagar</span></div>
+          <div><strong>Hóspede Titular:</strong> <span id="modalGuestName">-</span></div>
+          <div><strong>Datas:</strong> <span id="modalDates">-</span></div>
+          <div><strong>Método de Pagamento:</strong> <span id="modalPaymentMethod">Cartão Bancário</span></div>
+          <div id="modalInvoiceRow" style="display: none;"><strong>NIF de Faturação:</strong> <span id="modalInvoiceNif">-</span></div>
+          <div style="margin-top: 0.5rem; font-weight: 700; color: var(--primary-accent); font-size: 1rem;">
+            Valor da Estadia: <span id="modalTotalPaid">Sob Consulta (Confirmado)</span>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
+          <a id="modalWhatsappBtn" href="https://wa.me/351925121364" class="btn btn-whatsapp" style="flex: 1; text-align: center; text-decoration: none;" target="_blank" rel="noopener noreferrer">
+            Falar com a D. Olga no WhatsApp
+          </a>
+          <a href="index.html" class="btn btn-outline-dark" style="flex: 1; text-align: center; text-decoration: none;">
+            Voltar ao Início
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

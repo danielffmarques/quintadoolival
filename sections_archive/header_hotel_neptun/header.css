@@ -1,0 +1,234 @@
+/*
+  CSS de Secção: Header Estilo Hotel Neptun
+  Origem: Inspirado em https://www.hotel-neptun.de/en/relax/
+*/
+.header-neptun {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  color: #FBF5ED;
+  transition: padding 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              backdrop-filter 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  background: transparent;
+  padding: 1.35rem 3.5rem;
+}
+
+.header-neptun::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 -2.8em;
+  pointer-events: none;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(16, 24, 20, 0.82) 0%, rgba(16, 24, 20, 0.45) 55%, rgba(16, 24, 20, 0) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 55%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 55%, rgba(0, 0, 0, 0) 100%);
+  transition: opacity 0.4s ease;
+}
+
+.header-neptun.header-scrolled {
+  padding: 0.85rem 3.5rem;
+  background-color: rgba(18, 26, 22, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.32);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header-neptun.header-scrolled::before {
+  opacity: 0;
+}
+
+.neptun-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+}
+
+.neptun-header-left {
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.neptun-book-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 12px 28px;
+  border: 1px solid rgba(251, 245, 237, 0.85);
+  background: transparent;
+  color: #FBF5ED !important;
+  font-family: var(--font-nav);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neptun-book-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  padding-bottom: 100%;
+  background: #FBF5ED;
+  opacity: 0.25;
+  transform: translateY(-50%) translate(-100%) translate(1.15em) rotate(-8deg);
+  transform-origin: 100% 50%;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.neptun-book-btn:hover {
+  background: rgba(251, 245, 237, 0.15);
+  border-color: #FFFFFF;
+  box-shadow: 0 0 16px rgba(251, 245, 237, 0.2);
+}
+
+.neptun-book-btn:hover::before {
+  transform: translateY(-50%) translate(0) rotate(0deg);
+  opacity: 0.1;
+}
+
+.neptun-header-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.neptun-emblem-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #FBF5ED;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+
+.neptun-emblem-link:hover {
+  transform: scale(1.05);
+  opacity: 0.95;
+}
+
+.neptun-emblem-svg {
+  width: 50px;
+  height: 50px;
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.header-scrolled .neptun-emblem-svg {
+  width: 44px;
+  height: 44px;
+}
+
+.neptun-emblem-caption {
+  font-family: var(--font-nav);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: rgba(251, 245, 237, 0.88);
+  margin-top: 5px;
+  white-space: nowrap;
+}
+
+.neptun-header-right {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  z-index: 2;
+}
+
+.neptun-nav .nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.neptun-nav .nav-link {
+  font-family: var(--font-nav);
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(251, 245, 237, 0.88);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.neptun-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #FBF5ED;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.24s var(--ease-organic);
+}
+
+.neptun-nav .nav-link:hover,
+.neptun-nav .nav-link.active {
+  color: #FFFFFF;
+}
+
+.neptun-nav .nav-link:hover::after,
+.neptun-nav .nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.neptun-lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-nav);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: rgba(251, 245, 237, 0.75);
+}
+
+.neptun-lang-switch .lang-option {
+  color: rgba(251, 245, 237, 0.6);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.neptun-lang-switch .lang-option.active {
+  color: #FBF5ED;
+}
+
+.neptun-lang-switch .lang-option:hover {
+  color: #FFFFFF;
+}
+
+.neptun-lang-switch .lang-slash {
+  opacity: 0.4;
+}

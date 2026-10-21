@@ -1,0 +1,36 @@
+/*
+  CSS Original: Header da Quinta do Olival
+  Origem: projects/quintadoolival/04_prototype/css/style.css
+*/
+.header {
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-white);
+  box-shadow: var(--shadow-sm);
+  z-index: 1000;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color var(--duration-normal) var(--ease-organic),
+              box-shadow var(--duration-normal) var(--ease-organic),
+              border-color var(--duration-normal) var(--ease-organic),
+              backdrop-filter var(--duration-normal) var(--ease-organic);
+}
+
+.header.header-scrolled {
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(41, 46, 49, 0.08);
+  border-bottom-color: rgba(229, 231, 235, 0.85);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  transition: height var(--duration-normal) var(--ease-organic);
+}
+
+.header.header-scrolled .nav-container {
+  height: 68px;
+}

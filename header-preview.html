@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Análise Comparativa de Cabeçalhos — Quinta do Olival</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #F3F4F6;
+      font-family: var(--font-body);
+      color: var(--text-primary);
+      margin: 0;
+      padding: 0;
+    }
+    .preview-page-header {
+      background: #FFFFFF;
+      padding: 2.5rem 1.5rem 1.5rem;
+      border-bottom: 1px solid #E5E7EB;
+      text-align: center;
+    }
+    .preview-badge {
+      display: inline-block;
+      font-family: var(--font-nav);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #3B533E;
+      background: #EAF0EB;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+    }
+    .preview-title {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      margin: 0 0 0.5rem 0;
+      color: #1A241E;
+    }
+    .preview-subtitle {
+      font-size: 1rem;
+      color: #64748B;
+      max-width: 680px;
+      margin: 0 auto 1.5rem auto;
+      line-height: 1.5;
+    }
+    .preview-nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #2E4733;
+      color: #FFFFFF;
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .preview-nav-cta:hover {
+      background: #223726;
+      transform: translateY(-1px);
+    }
+    .comparison-container {
+      max-width: 1400px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+    .variant-card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      border: 1px solid #E5E7EB;
+    }
+    .variant-card-header {
+      padding: 1.25rem 1.75rem;
+      background: #FAFAFA;
+      border-bottom: 1px solid #EAEAEA;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .variant-num-pill {
+      font-family: var(--font-nav);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #1A241E;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .variant-num-pill span {
+      background: #1A241E;
+      color: #FFFFFF;
+      width: 22px;
+      height: 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 0.75rem;
+    }
+    .variant-specs {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.82rem;
+      color: #64748B;
+    }
+    .variant-specs strong {
+      color: #1A241E;
+    }
+    .variant-desc {
+      padding: 1rem 1.75rem;
+      font-size: 0.95rem;
+      color: #475569;
+      background: #FFFFFF;
+      border-bottom: 1px solid #F1F5F9;
+      line-height: 1.5;
+    }
+    .header-viewport-demo {
+      position: relative;
+      background-image: url('assets/images/hero_quinta_casa_olival.jpg?v=dusk_bottom');
+      background-position: center bottom;
+      background-size: cover;
+      height: 340px;
+      display: flex;
+      flex-direction: column;
+    }
+    .header-viewport-demo .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, rgba(20, 26, 22, 0.15) 0%, rgba(20, 26, 22, 0.45) 100%);
+      pointer-events: none;
+    }
+    .header-viewport-demo .demo-hero-text {
+      position: relative;
+      z-index: 2;
+      margin: auto auto 2.5rem 3rem;
+      color: #FFFFFF;
+    }
+    .demo-hero-text h3 {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      margin: 0 0 0.5rem 0;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+    .demo-hero-text p {
+      font-size: 0.9rem;
+      margin: 0;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="preview-page-header">
+    <span class="preview-badge">Painel de Comparação Visual</span>
+    <h1 class="preview-title">3 Alternativas de Cabeçalho Opaco e Compacto</h1>
+    <p class="preview-subtitle">
+      Concebidas para ocupar menos espaço acima da dobra, valorizar o logótipo e a hospitalidade da Quinta do Olival, garantindo conversão contínua e links rigorosamente fixos.
+    </p>
+    <a href="index.html" class="preview-nav-cta">
+      <span>Testar Interativamente na Homepage com Switcher Flutuante</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+
+  <div class="comparison-container">
+
+    <!-- Variante 1 -->
+    <div class="variant-card">
+      <div class="variant-card-header">
+        <div class="variant-num-pill">
+          <span>1</span>
+          <strong>Variante 1: Slim Editorial &amp; Pílula de Reserva Imediata</strong>
+        </div>
+        <div class="variant-specs">
+          <div>Altura: <strong>60px</strong></div>
+          <div>Fundo: <strong>#FAF9F5 (Marfim Suave)</strong></div>
+          <div>Links: <strong>Ardósia #2C3531</strong></div>
+          <div>CTA: <strong>Verde Acentuado #2E4733</strong></div>
+        </div>
+      </div>
+      <div class="variant-desc">
+        Apresenta o logótipo acompanhado de um divisor fino e a linha de posicionamento com tipografia clássica Cormorant (<em>"Turismo Rural • Távora, Arcos de Valdevez"</em>). O botão pílula verde oliva transmite calma e convite natural, sempre reservado no layout para estabilidade máxima dos links.
+      </div>
+      <div class="header-viewport-demo">
+        <div class="hero-overlay"></div>
+        <header class="header header-variant-1">
+          <div class="container nav-container">
+            <div class="brand-group">
+              <a href="index.html" class="logo-link">
+                <img src="assets/logos/logo.png" alt="Quinta do Olival" class="logo-img">
+              </a>
+              <div class="brand-tagline-wrap">
+                <span class="brand-v-divider"></span>
+                <div class="brand-tagline-texts">
+                  <span class="brand-sub-title">Turismo Rural</span>
+                  <span class="brand-sub-location">Távora, Arcos de Valdevez</span>
+                </div>
+              </div>
+            </div>
+            <div class="nav-right-area">
+              <ul class="nav-menu">
+                <li><a href="#experiencia" class="nav-link">A Quinta</a></li>
+                <li><a href="#espaco-casas" class="nav-link">Casas</a></li>
+                <li><a href="#arredores" class="nav-link">Arredores</a></li>
+                <li><a href="#opinioes" class="nav-link">Opiniões</a></li>
+                <li><a href="#faq-duvidas" class="nav-link">FAQs</a></li>
+              </ul>
+              <div class="header-action-zone">
+                <a href="reservas.html" class="v1-pill-cta">
+                  <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+                  <span>Reservar Estadia</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div class="demo-hero-text">
+          <h3>O Silêncio e a Alma do Alto Minho</h3>
+          <p>Vista com cabeçalho compacto de 60px sobre a dobra inicial</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Variante 2 -->
+    <div class="variant-card">
+      <div class="variant-card-header">
+        <div class="variant-num-pill">
+          <span>2</span>
+          <strong>Variante 2: Dual-Tone com Micro-Barra de Reserva Integrada</strong>
+        </div>
+        <div class="variant-specs">
+          <div>Altura: <strong>62px</strong></div>
+          <div>Fundo: <strong>#FFFFFF (Branco Puro)</strong></div>
+          <div>Links: <strong>Escuro #1F2421</strong></div>
+          <div>Micro-Barra: <strong>Cápsula de Seleção Rápida</strong></div>
+        </div>
+      </div>
+      <div class="variant-desc">
+        Fundo branco nítido com foco absoluto na identidade e na usabilidade. A micro-cápsula à direita permite ao visitante verificar datas e avançar de imediato para a reserva com um clique, funcionando como um motor de conversão sempre acessível sem poluir o visual.
+      </div>
+      <div class="header-viewport-demo">
+        <div class="hero-overlay"></div>
+        <header class="header header-variant-2">
+          <div class="container nav-container">
+            <div class="brand-group">
+              <a href="index.html" class="logo-link">
+                <img src="assets/logos/logo.png" alt="Quinta do Olival" class="logo-img">
+              </a>
+              <div class="brand-tagline-wrap">
+                <span class="brand-v-divider"></span>
+                <div class="brand-tagline-texts">
+                  <span class="brand-sub-title">Acolhimento Familiar</span>
+                  <span class="brand-sub-location">Arcos de Valdevez</span>
+                </div>
+              </div>
+            </div>
+            <div class="nav-right-area">
+              <ul class="nav-menu">
+                <li><a href="#experiencia" class="nav-link">A Quinta</a></li>
+                <li><a href="#espaco-casas" class="nav-link">Casas</a></li>
+                <li><a href="#arredores" class="nav-link">Arredores</a></li>
+                <li><a href="#opinioes" class="nav-link">Opiniões</a></li>
+                <li><a href="#faq-duvidas" class="nav-link">FAQs</a></li>
+              </ul>
+              <div class="header-action-zone">
+                <div class="v2-micro-booking">
+                  <a href="reservas.html" class="v2-dates-btn">
+                    <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span>Verificar Datas</span>
+                  </a>
+                  <a href="reservas.html" class="v2-submit-btn">Reservar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div class="demo-hero-text">
+          <h3>O Silêncio e a Alma do Alto Minho</h3>
+          <p>Vista com cabeçalho limpo e cápsula direta de reservas</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Variante 3 -->
+    <div class="variant-card">
+      <div class="variant-card-header">
+        <div class="variant-num-pill">
+          <span>3</span>
+          <strong>Variante 3: Contraste Noturno — Verde Oliva Profundo / Ardósia</strong>
+        </div>
+        <div class="variant-specs">
+          <div>Altura: <strong>58px</strong></div>
+          <div>Fundo: <strong>#152018 (Oliva Escuro Minho)</strong></div>
+          <div>Links: <strong>Branco Pérola rgba(255,255,255,0.86)</strong></div>
+          <div>CTA: <strong>Bordô Terracota #B32634</strong></div>
+        </div>
+      </div>
+      <div class="variant-desc">
+        Estética sofisticada de boutique rural rústica. O fundo verde oliva escuro nobre faz o logótipo brilhar com contraste cinematográfico, enquanto os links ganham tons quentes e o botão de reserva em tom terracota/bordô se torna o ponto focal mais forte de todo o topo da página.
+      </div>
+      <div class="header-viewport-demo">
+        <div class="hero-overlay"></div>
+        <header class="header header-variant-3">
+          <div class="container nav-container">
+            <div class="brand-group">
+              <a href="index.html" class="logo-link">
+                <img src="assets/logos/logo.png" alt="Quinta do Olival" class="logo-img">
+              </a>
+              <div class="brand-tagline-wrap">
+                <span class="brand-v-divider"></span>
+                <div class="brand-tagline-texts">
+                  <span class="brand-sub-title">Casas Rurais de Granito</span>
+                  <span class="brand-sub-location">Távora, Arcos de Valdevez</span>
+                </div>
+              </div>
+            </div>
+            <div class="nav-right-area">
+              <ul class="nav-menu">
+                <li><a href="#experiencia" class="nav-link">A Quinta</a></li>
+                <li><a href="#espaco-casas" class="nav-link">Casas</a></li>
+                <li><a href="#arredores" class="nav-link">Arredores</a></li>
+                <li><a href="#opinioes" class="nav-link">Opiniões</a></li>
+                <li><a href="#faq-duvidas" class="nav-link">FAQs</a></li>
+              </ul>
+              <div class="header-action-zone">
+                <a href="reservas.html" class="v3-noturno-cta">
+                  <span>Reservar Estadia</span>
+                  <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div class="demo-hero-text">
+          <h3>O Silêncio e a Alma do Alto Minho</h3>
+          <p>Vista com moldura escura sofisticada de alto contraste</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
