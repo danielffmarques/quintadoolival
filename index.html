@@ -80,6 +80,14 @@
             <li><a href="#opinioes" class="nav-link">Opiniões</a></li>
             <li><a href="#faq-duvidas" class="nav-link">FAQs</a></li>
           </ul>
+          <div class="mobile-nav-footer">
+            <a href="reservas.html" class="mobile-nav-cta">Reservar Agora</a>
+            <a href="https://wa.me/351919894459?text=Ol%C3%A1%20D.%20Olga,%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20Quinta%20do%20Olival." target="_blank" rel="noopener noreferrer" class="mobile-nav-contact">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span>Falar com D. Olga (+351 919 894 459)</span>
+            </a>
+            <p class="mobile-nav-locale">Távora • Arcos de Valdevez, Alto Minho</p>
+          </div>
         </nav>
 
         <!-- 3. Direita: Botão Reservar (Mais afastado, surge só quando a barra do Hero desaparecer) + Mobile Menu -->
@@ -243,9 +251,9 @@
         <!-- Acordeão em Arquivo (Estilo Hotel Odisej com Gaveta "File" e Carrossel de Imagens) -->
         <div class="houses-file-accordion" id="housesAccordion">
 
-          <!-- Casa 1: Casa do Lagar (T2) -->
-          <article class="house-file-item" data-unit="lagar">
-            <div class="house-file-header" role="button" aria-expanded="false" tabindex="0">
+          <!-- Casa 1: Casa do Lagar (T2) — Aberta por defeito para visualização imediata -->
+          <article class="house-file-item active" data-unit="lagar">
+            <div class="house-file-header" role="button" aria-expanded="true" tabindex="0">
               <div class="house-file-left">
                 <div class="house-file-thumb">
                   <img src="assets/images/lagar_cover.jpg" alt="Casa do Lagar" loading="lazy">
@@ -1614,14 +1622,17 @@
     </div>
   </footer>
 
-  <!-- Barra Fixa Mobile para Contacto e Reserva Rápida -->
-  <div class="mobile-bottom-bar">
-    <div class="mobile-bottom-bar-inner">
-      <a href="https://wa.me/351925121364?text=Ol%C3%A1%21%20Gostaria%20de%20consultar%20disponibilidade%20para%20a%20Quinta%20do%20Olival." class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-      <a href="tel:+351925121364" class="btn btn-dark">Ligar</a>
-      <a href="reservas.html" class="btn btn-primary">Reservar</a>
-    </div>
-  </div>
+  <!-- Botão Flutuante Discreto WhatsApp (Hospitalidade Pessoal Bruto) -->
+  <a href="https://wa.me/351925121364?text=Ol%C3%A1%21%20Gostaria%20de%20consultar%20disponibilidade%20para%20a%20Quinta%20do%20Olival." 
+     class="floating-whatsapp-btn" 
+     aria-label="Falar com a D. Olga no WhatsApp" 
+     target="_blank" 
+     rel="noopener noreferrer"
+     title="Falar com a D. Olga">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="#FFFFFF">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.44 0-2.85-.38-4.09-1.11l-.29-.17-3.12.82.83-3.04-.19-.31a8.19 8.19 0 0 1-1.26-4.43c0-4.54 3.69-8.25 8.24-8.25zm4.52 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.25-1.49-1.4-1.74-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.57.13.17 1.75 2.67 4.24 3.75.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.3z"/>
+    </svg>
+  </a>
 
   <script src="js/main.js"></script>
 </body>

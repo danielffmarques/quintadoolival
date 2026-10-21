@@ -24,13 +24,14 @@
           <span class="booking-brand-location">Távora, Arcos de Valdevez</span>
         </div>
       </a>
-      <div class="booking-header-actions" style="display: flex; align-items: center; gap: 1.25rem;">
-        <a href="index.html" class="btn btn-outline-dark" style="font-size: 0.84rem; padding: 0.45rem 0.95rem;">
-          &larr; Voltar ao Website
+      <div class="booking-header-actions">
+        <a href="index.html" class="btn btn-outline-dark booking-back-btn">
+          <span class="booking-back-full">&larr; Voltar ao Website</span>
+          <span class="booking-back-short">&larr; Início</span>
         </a>
-        <a href="tel:+351925121364" class="nav-contact-link" style="color: var(--dark-neutral); font-weight: 600; font-size: 0.88rem; text-decoration: none; display: flex; align-items: center; gap: 0.4rem;">
+        <a href="tel:+351925121364" class="nav-contact-link booking-phone-btn" aria-label="Ligar para +351 925 121 364">
           <svg class="icon-svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          <span>+351 925 121 364</span>
+          <span class="booking-phone-text">+351 925 121 364</span>
         </a>
       </div>
     </div>
@@ -52,6 +53,40 @@
       <div class="booking-page-layout">
         <!-- Coluna Esquerda: Passos Sequenciais de Reserva -->
         <div class="booking-steps-col">
+
+          <!-- Resumo Rápido para Ecrãs Móveis (Acompanha o utilizador no topo) -->
+          <div class="mobile-summary-pill" id="mobileSummaryPill" aria-expanded="false" role="button" tabindex="0">
+            <div class="mobile-summary-pill-main">
+              <div class="mobile-summary-pill-left">
+                <span class="mobile-summary-pill-label">A sua estadia:</span>
+                <span class="mobile-summary-pill-unit" id="mobileSummaryUnit">Casa do Lagar (T2)</span>
+                <span class="mobile-summary-pill-dates" id="mobileSummaryDates">• Datas a definir</span>
+              </div>
+              <div class="mobile-summary-pill-right">
+                <span class="mobile-summary-pill-price" id="mobileSummaryPrice">Sob Consulta</span>
+                <svg class="mobile-summary-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </div>
+            <div class="mobile-summary-pill-dropdown" id="mobileSummaryDropdown">
+              <div class="mobile-summary-row">
+                <span>Duração:</span>
+                <strong id="mobileSummaryNights">— noites</strong>
+              </div>
+              <div class="mobile-summary-row">
+                <span>Hóspedes:</span>
+                <strong id="mobileSummaryGuests">2 Hóspedes</strong>
+              </div>
+              <div class="mobile-summary-row">
+                <span>Pequeno-Almoço:</span>
+                <strong id="mobileSummaryBreakfast">Apenas Alojamento</strong>
+              </div>
+              <div class="mobile-summary-row total">
+                <span>Valor Total:</span>
+                <strong style="color: var(--primary-accent);">Sob Consulta</strong>
+              </div>
+            </div>
+          </div>
+
           <form id="dedicatedBookingForm">
 
             <!-- ==============================================================
@@ -218,8 +253,8 @@
                 <button type="button" class="step-edit-link" id="btnEditStep2" style="margin-left: auto; background: none; border: none; color: var(--primary-accent); font-size: 0.82rem; cursor: pointer; text-decoration: underline;">Alterar Casa</button>
               </div>
               
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
-                <div class="form-group" style="grid-column: span 2;">
+              <div class="booking-personal-grid">
+                <div class="form-group grid-span-full">
                   <label for="bookName" style="font-weight: 600; font-size: 0.88rem; margin-bottom: 0.35rem;">Nome Completo do Titular *</label>
                   <input type="text" id="bookName" name="name" class="form-control" placeholder="ex: Maria Antónia Sousa" required>
                 </div>
@@ -308,18 +343,18 @@
               </p>
 
               <!-- Métodos de Pagamento Interativos -->
-              <div class="payment-methods-tabs" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem; margin-bottom: 1.25rem;">
-                <button type="button" class="payment-tab-btn active" data-method="card" style="border: 2px solid var(--primary-accent); background: var(--bg-white); border-radius: var(--border-radius-md); padding: 0.85rem 0.5rem; text-align: center; cursor: pointer;">
-                  <div style="font-weight: 700; font-size: 0.88rem; color: var(--dark-neutral);">Cartão Bancário</div>
-                  <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.15rem;">Visa &bull; Mastercard &bull; Amex</div>
+              <div class="payment-methods-tabs">
+                <button type="button" class="payment-tab-btn active" data-method="card">
+                  <div class="payment-tab-title">Cartão Bancário</div>
+                  <div class="payment-tab-sub">Visa &bull; Mastercard &bull; Amex</div>
                 </button>
-                <button type="button" class="payment-tab-btn" data-method="mbway" style="border: 1px solid var(--border-color); background: var(--bg-white); border-radius: var(--border-radius-md); padding: 0.85rem 0.5rem; text-align: center; cursor: pointer;">
-                  <div style="font-weight: 700; font-size: 0.88rem; color: var(--dark-neutral);">MB WAY</div>
-                  <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.15rem;">Notificação Imediata</div>
+                <button type="button" class="payment-tab-btn" data-method="mbway">
+                  <div class="payment-tab-title">MB WAY</div>
+                  <div class="payment-tab-sub">Notificação Imediata</div>
                 </button>
-                <button type="button" class="payment-tab-btn" data-method="multibanco" style="border: 1px solid var(--border-color); background: var(--bg-white); border-radius: var(--border-radius-md); padding: 0.85rem 0.5rem; text-align: center; cursor: pointer;">
-                  <div style="font-weight: 700; font-size: 0.88rem; color: var(--dark-neutral);">Multibanco</div>
-                  <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 0.15rem;">Entidade &bull; Referência</div>
+                <button type="button" class="payment-tab-btn" data-method="multibanco">
+                  <div class="payment-tab-title">Multibanco</div>
+                  <div class="payment-tab-sub">Entidade &bull; Referência</div>
                 </button>
               </div>
 

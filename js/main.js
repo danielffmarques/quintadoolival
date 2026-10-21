@@ -145,12 +145,20 @@ function initMobileMenu() {
       navMenu.classList.toggle('active');
       const isExpanded = navMenu.classList.contains('active');
       menuBtn.setAttribute('aria-expanded', isExpanded);
+      menuBtn.setAttribute('aria-label', isExpanded ? 'Fechar Menu' : 'Abrir Menu');
+      menuBtn.innerHTML = isExpanded 
+        ? '<svg class="icon-svg-lg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>'
+        : '<svg class="icon-svg-lg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>';
+      document.body.style.overflow = isExpanded ? 'hidden' : '';
     });
 
-    navMenu.querySelectorAll('.nav-link').forEach(link => {
+    navMenu.querySelectorAll('.nav-link, .mobile-nav-cta').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
         menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.setAttribute('aria-label', 'Abrir Menu');
+        menuBtn.innerHTML = '<svg class="icon-svg-lg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>';
+        document.body.style.overflow = '';
       });
     });
   }
@@ -1306,6 +1314,31 @@ function initDedicatedBookingPage() {
     if (summaryTotalPrice) {
       summaryTotalPrice.textContent = 'Sob Consulta';
     }
+
+    // Atualização do Resumo Móvel Superior
+    if (mobileSummaryUnit) mobileSummaryUnit.textContent = house.name;
+    if (mobileSummaryDates) mobileSummaryDates.textContent = cin && cout ? `• ${cin} a ${cout}` : '• Datas a definir';
+    if (mobileSummaryNights) mobileSummaryNights.textContent = summaryNights ? summaryNights.textContent : '— noites';
+    if (mobileSummaryGuests) mobileSummaryGuests.textContent = guestsVal;
+    if (mobileSummaryBreakfast) mobileSummaryBreakfast.textContent = hasBreakfast ? 'Cesta Matinal Regional' : 'Apenas Alojamento';
+    if (mobileSummaryPrice) mobileSummaryPrice.textContent = 'Sob Consulta';
+  }
+
+  // Toggle do Resumo Móvel Superior
+  const mobileSummaryPill = document.getElementById('mobileSummaryPill');
+  const mobileSummaryUnit = document.getElementById('mobileSummaryUnit');
+  const mobileSummaryDates = document.getElementById('mobileSummaryDates');
+  const mobileSummaryNights = document.getElementById('mobileSummaryNights');
+  const mobileSummaryGuests = document.getElementById('mobileSummaryGuests');
+  const mobileSummaryBreakfast = document.getElementById('mobileSummaryBreakfast');
+  const mobileSummaryPrice = document.getElementById('mobileSummaryPrice');
+
+  if (mobileSummaryPill) {
+    mobileSummaryPill.addEventListener('click', () => {
+      mobileSummaryPill.classList.toggle('open');
+      const isOpen = mobileSummaryPill.classList.contains('open');
+      mobileSummaryPill.setAttribute('aria-expanded', isOpen);
+    });
   }
 
   // Breakfast card switcher
