@@ -54,7 +54,7 @@ function initScrollHeader() {
     }
 
     // CTA do Header condicionado ao scroll: entra um bocadinho mais cedo (~80px antes da saída total do formulário)
-    if (heroBookingWrapper) {
+    if (heroBookingWrapper && window.innerWidth > 768) {
       const rect = heroBookingWrapper.getBoundingClientRect();
       const isHeroCtaOut = rect.bottom <= 80;
       header.classList.toggle('header-cta-visible', isHeroCtaOut);
@@ -231,12 +231,6 @@ function initQuintaHousesTabs() {
         // Expande o alojamento clicado mantendo os outros abertos conforme pretendido
         item.classList.add('active');
         header.setAttribute('aria-expanded', 'true');
-
-        // Abre para baixo de forma estável e contínua a partir da posição atual do clique (sem saltos de ecrã)
-        const headerRect = header.getBoundingClientRect();
-        if (headerRect.top < 65) {
-          window.scrollBy({ top: headerRect.top - 70, behavior: 'smooth' });
-        }
       }
     });
 
@@ -321,7 +315,6 @@ function initHouseCarousels() {
     window.addEventListener('mouseup', () => {
       if (isTrackDown) {
         isTrackDown = false;
-        track.style.scrollBehavior = 'smooth';
       }
     });
 
@@ -633,7 +626,6 @@ function initActivitiesTabs() {
     if (isDown) {
       isDown = false;
       grid.classList.remove('is-dragging');
-      grid.style.scrollBehavior = 'smooth';
     }
   });
 

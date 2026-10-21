@@ -416,14 +416,19 @@ img {
 @media (max-width: 900px) {
   .header-neptun {
     padding: 0.65rem 1rem;
-    background-color: rgba(255, 255, 255, calc(var(--scroll-p, 0) * 0.96 + (1 - var(--scroll-p, 0)) * 0.15));
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    background-color: rgba(255, 255, 255, calc(var(--scroll-p, 0) * 0.98));
+    backdrop-filter: blur(calc(var(--scroll-p, 0) * 16px));
+    -webkit-backdrop-filter: blur(calc(var(--scroll-p, 0) * 16px));
+    box-shadow: 0 2px 14px rgba(0, 0, 0, calc(var(--scroll-p, 0) * 0.08));
+    border-bottom: 1px solid rgba(228, 231, 226, calc(var(--scroll-p, 0) * 0.85));
   }
   .header-neptun.header-scrolled {
     padding: 0.55rem 1rem;
     background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     box-shadow: 0 2px 14px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(228, 231, 226, 0.85);
   }
   .header-neptun::before {
     display: none !important;
@@ -771,6 +776,13 @@ img {
   position: relative;
   z-index: 5;
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  /* Elimina a barra branca de reservas no hero em telemóvel */
+  .hero-booking-wrapper {
+    display: none !important;
+  }
 }
 
 /* Botões com Hierarquia Clara */
@@ -1417,7 +1429,7 @@ img {
   height: 100%;
   overflow-x: auto;
   overflow-y: hidden;
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: none;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
   touch-action: pan-x pan-y;
@@ -1435,8 +1447,8 @@ img {
   height: 100%;
   position: relative;
   flex-shrink: 0;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+  scroll-snap-align: none;
+  scroll-snap-stop: normal;
 }
 
 .unit-carousel-slide img {
@@ -4578,7 +4590,7 @@ h2 {
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
     overflow-y: hidden !important;
-    scroll-snap-type: x mandatory !important;
+    scroll-snap-type: none !important;
     -webkit-overflow-scrolling: touch !important;
     overscroll-behavior-x: contain !important;
     touch-action: pan-x pan-y !important;
@@ -4593,7 +4605,8 @@ h2 {
     flex: 0 0 85% !important;
     max-width: 85% !important;
     min-width: 280px !important;
-    scroll-snap-align: start !important;
+    scroll-snap-align: none !important;
+    scroll-snap-stop: normal !important;
     margin-bottom: 0 !important;
     height: auto !important;
     min-height: 330px !important;
@@ -4638,7 +4651,8 @@ h2 {
     flex: 0 0 90% !important;
     max-width: 90% !important;
     min-width: 285px !important;
-    scroll-snap-align: start !important;
+    scroll-snap-align: none !important;
+    scroll-snap-stop: normal !important;
     margin-bottom: 0 !important;
   }
   .activities-pagination-controls {
