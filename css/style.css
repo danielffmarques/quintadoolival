@@ -118,6 +118,9 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .container {
@@ -456,18 +459,18 @@ img {
                 opacity 0.2s ease;
   }
   .neptun-original-logo {
-    height: 46px !important;
+    height: 48px !important;
     max-width: 130px !important;
     width: auto !important;
-    transform: scale(1.12) !important;
-    transform-origin: center center !important;
+    transform: none !important;
     position: relative;
     z-index: 2;
     margin-top: 3px;
+    image-rendering: -webkit-optimize-contrast;
   }
   .header-scrolled .neptun-original-logo {
     height: 40px !important;
-    transform: scale(1.05) !important;
+    transform: none !important;
     margin-top: 0;
   }
   .neptun-header-center {
@@ -1416,8 +1419,9 @@ img {
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x pan-y;
   scrollbar-width: none;
-  scroll-behavior: smooth;
 }
 
 .unit-carousel-track::-webkit-scrollbar {
@@ -4576,6 +4580,8 @@ h2 {
     overflow-y: hidden !important;
     scroll-snap-type: x mandatory !important;
     -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-x: contain !important;
+    touch-action: pan-x pan-y !important;
     gap: 1rem !important;
     padding: 0.25rem 0.25rem 1.15rem !important;
     scrollbar-width: none !important;

@@ -224,16 +224,11 @@ function initQuintaHousesTabs() {
       const isCurrentlyActive = item.classList.contains('active');
 
       if (isCurrentlyActive) {
-        // Se clicar no aberto, fecha para poder ver a lista completa
+        // Se clicar no aberto, recolhe suavemente
         item.classList.remove('active');
         header.setAttribute('aria-expanded', 'false');
       } else {
-        // Fecha todos os outros e expande o clicado
-        items.forEach(other => {
-          other.classList.remove('active');
-          const otherHeader = other.querySelector('.house-file-header');
-          if (otherHeader) otherHeader.setAttribute('aria-expanded', 'false');
-        });
+        // Expande o alojamento clicado mantendo os outros abertos conforme pretendido
         item.classList.add('active');
         header.setAttribute('aria-expanded', 'true');
 
