@@ -274,64 +274,45 @@ function initHouseCarousels() {
 
     if (!track || slides.length <= 1) return;
 
-    let currentIndex = 0;
-
-    function goToSlide(index) {
-      if (index < 0) {
-        currentIndex = slides.length - 1;
-      } else if (index >= slides.length) {
-        currentIndex = 0;
-      } else {
-        currentIndex = index;
+    // Sincronização em tempo real das bolinhas com o deslize nativo
+    let isTicking = false;
+    track.addEventListener('scroll', () => {
+      if (!isTicking) {
+        requestAnimationFrame(() => {
+          const w = track.clientWidth || track.offsetWidth || 1;
+          const currentIdx = Math.min(slides.length - 1, Math.max(0, Math.round(track.scrollLeft / w)));
+          dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIdx));
+          isTicking = false;
+        });
+        isTicking = true;
       }
+    }, { passive: true });
 
-      track.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-      dots.forEach((dot, idx) => {
-        dot.classList.toggle('active', idx === currentIndex);
-      });
-    }
-
+    // Botões de navegação
     if (prevBtn) {
       prevBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        goToSlide(currentIndex - 1);
+        const w = track.clientWidth || 300;
+        track.scrollBy({ left: -w, behavior: 'smooth' });
       });
     }
 
     if (nextBtn) {
       nextBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        goToSlide(currentIndex + 1);
+        const w = track.clientWidth || 300;
+        track.scrollBy({ left: w, behavior: 'smooth' });
       });
     }
 
+    // Clique nas bolinhas
     dots.forEach((dot, idx) => {
       dot.addEventListener('click', (e) => {
         e.stopPropagation();
-        goToSlide(idx);
+        const w = track.clientWidth || 300;
+        track.scrollTo({ left: idx * w, behavior: 'smooth' });
       });
     });
-
-    // Suporte a Swipe Touch
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    carousel.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    carousel.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      const diff = touchStartX - touchEndX;
-      if (Math.abs(diff) > 45) {
-        if (diff > 0) {
-          goToSlide(currentIndex + 1);
-        } else {
-          goToSlide(currentIndex - 1);
-        }
-      }
-    }, { passive: true });
   });
 }
 
