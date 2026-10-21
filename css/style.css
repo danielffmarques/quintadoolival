@@ -2305,8 +2305,8 @@ img {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: 48px;
+  grid-template-columns: 1.15fr 0.85fr 1.35fr;
+  gap: 36px;
   margin-bottom: 28px;
 }
 
@@ -2605,6 +2605,7 @@ img {
   .hero-title { font-size: 2.2rem; }
   .two-cols { grid-template-columns: 1fr; gap: 2.5rem; }
   .two-cols-reversed { direction: ltr; }
+  .footer-col-nav { display: none !important; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .hero { min-height: auto; padding: 2.5rem 0 1.5rem 0; }
   .booking-form-horizontal { grid-template-columns: 1fr 1fr; }

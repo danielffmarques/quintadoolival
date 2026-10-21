@@ -228,7 +228,18 @@ function initQuintaHousesTabs() {
         item.classList.remove('active');
         header.setAttribute('aria-expanded', 'false');
       } else {
-        // Expande o alojamento clicado mantendo os outros abertos conforme pretendido
+        // Em ecrãs maiores que tablet (> 992px), as casas abrem uma a uma (fecha as restantes)
+        if (window.innerWidth > 992) {
+          items.forEach(otherItem => {
+            if (otherItem !== item && otherItem.classList.contains('active')) {
+              otherItem.classList.remove('active');
+              const otherHeader = otherItem.querySelector('.house-file-header');
+              if (otherHeader) otherHeader.setAttribute('aria-expanded', 'false');
+            }
+          });
+        }
+
+        // Expande o alojamento clicado (mantendo os outros abertos em mobile/tablet se o utilizador desejar)
         item.classList.add('active');
         header.setAttribute('aria-expanded', 'true');
       }
