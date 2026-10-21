@@ -237,13 +237,11 @@ function initQuintaHousesTabs() {
         item.classList.add('active');
         header.setAttribute('aria-expanded', 'true');
 
-        // Scroll suave para alinhar o item aberto no ecrã
-        setTimeout(() => {
-          const rect = item.getBoundingClientRect();
-          if (rect.top < 80 || rect.top > 250) {
-            window.scrollBy({ top: rect.top - 85, behavior: 'smooth' });
-          }
-        }, 150);
+        // Abre para baixo de forma estável e contínua a partir da posição atual do clique (sem saltos de ecrã)
+        const headerRect = header.getBoundingClientRect();
+        if (headerRect.top < 65) {
+          window.scrollBy({ top: headerRect.top - 70, behavior: 'smooth' });
+        }
       }
     });
 
@@ -312,6 +310,32 @@ function initHouseCarousels() {
         const w = track.clientWidth || 300;
         track.scrollTo({ left: idx * w, behavior: 'smooth' });
       });
+    });
+
+    // Suporte a Arraste com Rato na galeria da habitação
+    let isTrackDown = false;
+    let trackStartX, trackScrollLeft;
+
+    track.addEventListener('mousedown', (e) => {
+      isTrackDown = true;
+      trackStartX = e.pageX - track.offsetLeft;
+      trackScrollLeft = track.scrollLeft;
+      track.style.scrollBehavior = 'auto';
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (isTrackDown) {
+        isTrackDown = false;
+        track.style.scrollBehavior = 'smooth';
+      }
+    });
+
+    track.addEventListener('mousemove', (e) => {
+      if (!isTrackDown) return;
+      e.preventDefault();
+      const x = e.pageX - track.offsetLeft;
+      const walk = (x - trackStartX) * 1.5;
+      track.scrollLeft = trackScrollLeft - walk;
     });
   });
 }
@@ -597,6 +621,34 @@ function initActivitiesTabs() {
       }
     });
   }
+
+  // Suporte a Deslize por Arraste (Drag to scroll) com rato e toque fluido
+  let isDown = false;
+  let startX, startScrollLeft;
+
+  grid.addEventListener('mousedown', (e) => {
+    isDown = true;
+    grid.classList.add('is-dragging');
+    startX = e.pageX - grid.offsetLeft;
+    startScrollLeft = grid.scrollLeft;
+    grid.style.scrollBehavior = 'auto';
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (isDown) {
+      isDown = false;
+      grid.classList.remove('is-dragging');
+      grid.style.scrollBehavior = 'smooth';
+    }
+  });
+
+  grid.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - grid.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    grid.scrollLeft = startScrollLeft - walk;
+  });
 
   // Render inicial
   render();

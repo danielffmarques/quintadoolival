@@ -3785,6 +3785,12 @@ h2 {
   width: 100%;
   min-height: calc(250px * 2 + 1rem); /* 512px: Preserva rigorosamente as 2 linhas abertas */
   align-content: start;
+  cursor: grab;
+}
+
+.activities-grid.is-dragging {
+  cursor: grabbing !important;
+  user-select: none;
 }
 
 @keyframes activityFadeIn {
